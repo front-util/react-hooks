@@ -1,0 +1,78 @@
+{
+  "name": "@front-utils/react-hooks",
+  "version": "0.1.0",
+  "author": "IVGolubev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:garryk3/bun-pkg-template.git"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@front-utils/linter": "^0.9.6",
+    "@front-utils/utils": "^0.2.5",
+    "@types/bun": "^1.1.13",
+    "@types/eslint-plugin-jsx-a11y": "^6.9.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "bun": "^1.1.36",
+    "eslint": "^9.13.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-compat": "^6.0.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": ">=6.0.0",
+    "eslint-plugin-sonarjs": "^1.0.4",
+    "globals": "^15.11.0",
+    "lint-staged": "^15.2.10",
+    "react": "^18.3.1",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": ">=8.0.0"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./packages": "./src/index.ts",
+    "./types/*": "./types/*.d.ts",
+    "./types": "./types/index.d.ts",
+    "./types/index.d.ts": "./types/index.d.ts"
+  },
+  "browserslist": [
+    "chrome > 83",
+    "safari > 14.0"
+  ],
+  "description": "template",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "Javascript",
+    "Utils"
+  ],
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "ignore": [
+      ".github/",
+      "tsconfig.json"
+    ]
+  },
+  "scripts": {
+    "check-lint": "eslint --max-warnings=0 --fix",
+    "check-types": "tsc --noEmit",
+    "test": "bun test",
+    "publish": "bun run build && npm publish --access public",
+    "build-lib": "bun build ./src/index.ts --outdir ./dist --target browser --minify --format esm",
+    "build": "rm -rf dist && rm -rf types && bun run build-lib & tsc --p tsconfig.build.json"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged --no-stash",
+    "pre-push": "bun run test",
+    "preserveUnused": true
+  },
+  "type": "module",
+  "types": "./types/src/index.d.ts"
+}
