@@ -10,9 +10,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./packages": "./src/index.ts",
-    "./types/*": "./types/*.d.ts",
-    "./types": "./types/index.d.ts",
-    "./types/index.d.ts": "./types/index.d.ts"
+    "./types/*": "./types/src/*.d.ts",
+    "./types": "./types/src/index.d.ts",
+    "./types/index.d.ts": "./types/src/index.d.ts"
   },
   "imports": {
     "#src/*": "./src/*"
@@ -26,7 +26,8 @@
   },
   "keywords": [
     "Javascript",
-    "Utils"
+    "Utils",
+    "React hooks"
   ],
   "license": "ISC",
   "type": "module",
@@ -42,8 +43,8 @@
     "check-lint": "eslint --max-warnings=0 --fix",
     "check-types": "tsc --noEmit",
     "test": "vitest",
-    "publish": "bun run build && npm publish --access public",
-    "build-lib": "bun build ./src/index.ts --outdir ./dist --target browser --minify --format esm",
+    "pub": "bun run build && npm publish --access public",
+    "build-lib": "bun build ./src/index.ts --outdir ./dist --target browser --format esm --external react --external react-dom --external lodash.debounce",
     "build": "rm -rf dist && rm -rf types && bun run build-lib & tsc --p tsconfig.build.json"
   },
   "simple-git-hooks": {
