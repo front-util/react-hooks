@@ -9,9 +9,14 @@
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "paths": {
+      "#src/*": [
+        "./src/*"
+      ],
+    }
   },
   "exclude": [
     "node_modules",
@@ -20,6 +25,9 @@
   ],
   "include": [
     "./src/**/*",
-    "./tests/**/*"
+    "./tests/**/*",
+    "vitest.config.ts",
+    "vitest.utils.ts",
+    "vitest.setup.ts"
   ]
 }

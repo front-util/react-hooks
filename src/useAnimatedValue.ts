@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
-import utils from '@front-utils/utils';
+import {isNumber} from '@front-utils/utils';
 
 export const ANIMATION_TIME_MS = 1000;
 
@@ -9,7 +8,7 @@ export function useAnimatedValue(finishValue: number, { time = ANIMATION_TIME_MS
     const requestRef = useRef<number>();
 
     useEffect(() => {
-        if(!utils.check.isNumber(finishValue)) {
+        if(!isNumber(finishValue)) {
             setValue(finishValue);
             return;
         }
@@ -19,7 +18,7 @@ export function useAnimatedValue(finishValue: number, { time = ANIMATION_TIME_MS
         let prevValue = 0;
         let hasCanceled = false;
 
-        const animate = (frameTime: number) => {
+        const animate = (frameTime: number) => {            
             if(hasCanceled) {
                 return;
             }
@@ -27,7 +26,7 @@ export function useAnimatedValue(finishValue: number, { time = ANIMATION_TIME_MS
                 startTime = frameTime;
                 finishTime = frameTime + time;
             }
-
+            
             if(frameTime >= (finishTime ?? 0)) {
                 setValue(finishValue);
                 if(requestRef.current) {
