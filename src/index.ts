@@ -10,3 +10,4 @@ export * from './usePrevious';
 export * from './usePropsChanged';
 export * from './useScrollObserver';
 export * from './useStateBool';
+export * from './useResizeObserver';

@@ -1,6 +1,6 @@
 {
   "name": "@front-utils/react-hooks",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "author": "IVGolubev",
   "description": "template",
   "repository": {
@@ -44,7 +44,7 @@
     "check-types": "tsc --noEmit",
     "test": "vitest",
     "pub": "bun run build && npm publish --access public",
-    "build-lib": "bun build ./src/index.ts --outdir ./dist --target browser --format esm --external react --external react-dom --external lodash.debounce",
+    "build-lib": "bun build ./src/index.ts --outdir ./dist --target browser --format esm --minify --external react --external react-dom --external lodash.debounce",
     "build": "rm -rf dist && rm -rf types && bun run build-lib & tsc --p tsconfig.build.json"
   },
   "simple-git-hooks": {

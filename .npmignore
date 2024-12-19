@@ -13,4 +13,3 @@ tsconfig.json
 vitest.config.ts
 
 tests/
-src/
