@@ -1,6 +1,6 @@
 {
   "name": "@front-utils/react-hooks",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "author": "IVGolubev",
   "description": "template",
   "repository": {
@@ -10,9 +10,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./packages": "./src/index.ts",
-    "./types/*": "./types/src/*.d.ts",
-    "./types": "./types/src/index.d.ts",
-    "./types/index.d.ts": "./types/src/index.d.ts"
+    "./types/*": "./types/*.d.ts",
+    "./types": "./types/index.d.ts",
+    "./types/index.d.ts": "./types/index.d.ts"
   },
   "imports": {
     "#src/*": "./src/*"

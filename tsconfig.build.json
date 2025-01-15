@@ -3,10 +3,10 @@
     "compilerOptions": {
         "declaration": true,
         "declarationMap": true,
-        "declarationDir": "./types",
         "emitDeclarationOnly": true,
         "outDir": "./dist",
-        "rootDir": ".",
+        "declarationDir": "./types",
+        "rootDir": "./src",
         "moduleResolution": "node",
     },
     "include": [

@@ -2,13 +2,6 @@ import {describe, it, expect, beforeEach, afterEach, vi} from 'vitest';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useResizeObserver } from '#src/useResizeObserver';
-import { act } from 'react';
-
-function triggerResize(element: HTMLElement) {
-    const resizeEvent = new Event('resize');
-
-    element.dispatchEvent(resizeEvent);
-}
 
 describe('[hooks/useResizeObserver]', () => {
     beforeEach(() => {
