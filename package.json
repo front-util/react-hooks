@@ -47,7 +47,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged --no-stash",
-    "pre-push": "bun run test",
+    "pre-push": "vitest",
     "preserveUnused": true
   },
   "devDependencies": {
