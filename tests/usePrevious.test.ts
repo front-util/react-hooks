@@ -2,7 +2,7 @@ import {describe, it, expect} from 'vitest';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { usePrevious } from '#src/usePrevious';
+import { usePrevious } from '../src/usePrevious';
 
 describe('[speedometer/usePrevious]', () => {
     it('with changes', () => {

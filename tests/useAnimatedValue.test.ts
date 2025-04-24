@@ -2,7 +2,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import {vi, describe, it, expect, beforeEach, afterEach} from 'vitest';
 
-import { useAnimatedValue } from '#src/useAnimatedValue';
+import { useAnimatedValue } from '../src/useAnimatedValue';
 
 import {createAnimationFrameMock} from '../vitest.utils';
 

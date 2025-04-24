@@ -1,7 +1,7 @@
 import {describe, it, expect, beforeEach, afterEach, vi} from 'vitest';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useResizeObserver } from '#src/useResizeObserver';
+import { useResizeObserver } from '../src/useResizeObserver';
 
 describe('[hooks/useResizeObserver]', () => {
     beforeEach(() => {

@@ -1,7 +1,7 @@
 import {describe, it, expect} from 'vitest';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { usePropsChanged } from '#src/usePropsChanged';
+import { usePropsChanged } from '../src/usePropsChanged';
 
 const prevValue = 1;
 
